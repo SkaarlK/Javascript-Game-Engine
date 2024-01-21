@@ -1,5 +1,4 @@
-import { scene, camera, renderer, screen, loop, animations } from './lib/3D/utils.ts';
-import { Polygon, Cube, Rect, Triangle } from './lib/components.ts'
+import { scene, camera, renderer, screen, loop, animations, Polygon, Cube, Rect, Triangle } from './lib/utils.ts';
 
 screen.start(scene, camera, renderer);
 
