@@ -1,7 +1,10 @@
-import { animationLoop } from "./animation.ts";
+import { animations, loop } from "./animation.ts";
 import { camera } from "./camera.ts";
 import { scene } from "./scene.ts";
 import { renderer } from "./renderer.ts";
-import { makeScreen } from "./screen.ts";
+import * as screen from "./screen.ts";
+import * as webGL from "./webGL.ts";
 
-export { animationLoop, camera, scene, renderer, makeScreen };
+const doNothing = function() {};
+
+export { animations, loop, camera, scene, renderer, screen, webGL, doNothing };

@@ -1,14 +1,18 @@
-import { Shape } from './Shape.ts';
-import { BoxGeometry } from 'three';
+import Shape from './Shape.ts';
+import { doNothing } from '../3D/utils.ts';
+import { BoxGeometry, MeshBasicMaterial, Mesh } from 'three';
 
-export class Cube extends Shape {
-    animation: Function;
-    constructor({ width = 1, height = 1, depth = 1, color = 0x00ff00, animation = () => {} }: { width?: number, height?: number, depth?: number, color?: number, animation?: Function }) {
-        super({ geometry: new BoxGeometry(width, height, depth), color });
-        this.animation = animation;
+class Cube extends Shape {
+    constructor({ width = 1, height = 1, depth = 1, color = 0x00ff00, animation = function() {} }: ICube) {
+        super({
+            geometry: new BoxGeometry(width, height, depth),
+            material: new MeshBasicMaterial({ color }),
+            animation
+        });
     }
-
-    animate(deltaTime: number) {
-        this.animation(deltaTime);
-    }
+    animate(deltaTime: number) { this.animation(deltaTime) }
 }
+
+interface ICube { width?: number, height?: number, depth?: number, color?: number, animation?: Function };
+
+export default Cube;

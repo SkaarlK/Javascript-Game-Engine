@@ -1,3 +1,7 @@
 import { Scene } from 'three';
 
-export const scene = new Scene();
+const scene = new Scene();
+
+export {
+    scene
+}

@@ -5,7 +5,6 @@ import { camera } from '../3D/camera.ts';
 interface Animatable {
     animate(deltaTime: number): void;
 }
-
 class AnimationLoop {
     entities: Animatable[] = [];
     lastTime: number = 0;
@@ -24,4 +23,20 @@ class AnimationLoop {
     }
 }
 
-export const animationLoop = new AnimationLoop();
+const animations = {
+    still: function() {
+    },
+    rotate: function(xIncrement: number, yIncrement: number) {
+        return function() {
+            this.rotation.x += xIncrement;
+            this.rotation.y += yIncrement;
+        }
+    }
+}
+
+const loop = new AnimationLoop();
+
+export {
+    animations,
+    loop
+}

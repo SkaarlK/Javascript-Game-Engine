@@ -1,24 +1,35 @@
-import { Shape as ThreeShape, ShapeGeometry, MeshBasicMaterial, Mesh, Object3D, BufferGeometry, BoxGeometry, CircleGeometry } from 'three';
-import { animationLoop } from '../3D/animation.ts';
+import { BoxGeometry, MeshBasicMaterial, LineBasicMaterial, Mesh, Object3D, BufferGeometry, Line } from 'three';
+import { loop } from "../3D/utils";
+class Shape extends Object3D {
+    geometry: RegularShapeGeometry;
+    material: RegularShapeMaterial;
+    mesh: RegularShapeMesh;
+    animation: Function = function() {};
 
-export class Shape extends Object3D {
-    geometry: BufferGeometry;
-    material: MeshBasicMaterial;
-    mesh: Mesh;
-    animation: Function;
-
-    constructor({ geometry, color = 0x00ff00, animation = () => { } }: { geometry: BufferGeometry, color?: number, animation?: Function }) {
+    constructor({ geometry, material, animation }: IRegularShape) {
         super();
-        const material = new MeshBasicMaterial({ color });
-        const mesh = new Mesh(geometry, material);
         this.geometry = geometry;
         this.material = material;
-        this.mesh = mesh;
-        this.animation = animation;
-        this.add(mesh);
-        animationLoop.addEntity(this);
+        this.mesh = new Mesh(geometry, material);
+        this.add(this.mesh);
+
+        if (animation)
+            this.animation = animation;
+
+        loop.addEntity(this);
     };
 
-    animate(deltaTime: number) {
-    }
+    animate(deltaTime: number) {}
 }
+
+type RegularShapeGeometry = BufferGeometry | BoxGeometry;
+type RegularShapeMaterial = MeshBasicMaterial | LineBasicMaterial;
+type RegularShapeMesh = Mesh | Line;
+
+interface IRegularShape {
+    geometry: BufferGeometry,
+    material: MeshBasicMaterial | LineBasicMaterial
+    animation: Function;
+}
+
+export default Shape;

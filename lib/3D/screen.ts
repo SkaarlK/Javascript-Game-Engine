@@ -18,4 +18,8 @@ class Screen {
     }
 }
 
-export const makeScreen = (scene: Scene, camera: Camera, renderer: WebGLRenderer) => new Screen(scene, camera, renderer);
+const start = (scene: Scene, camera: Camera, renderer: WebGLRenderer) => new Screen(scene, camera, renderer);
+
+export {
+    start
+}

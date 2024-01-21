@@ -5,6 +5,10 @@ const screen = {
     height: window.innerHeight
 }
 
-export const renderer = new WebGLRenderer();
+const renderer = new WebGLRenderer();
 
 renderer.setSize(screen.width, screen.height);
+
+export {
+    renderer
+}
