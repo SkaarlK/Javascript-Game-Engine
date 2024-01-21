@@ -5,6 +5,4 @@ import { renderer } from "./renderer.ts";
 import * as screen from "./screen.ts";
 import * as webGL from "./webGL.ts";
 
-const doNothing = function() {};
-
-export { animations, loop, camera, scene, renderer, screen, webGL, doNothing };
+export { animations, loop, camera, scene, renderer, screen, webGL };
