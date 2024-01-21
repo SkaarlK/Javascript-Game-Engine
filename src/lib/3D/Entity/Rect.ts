@@ -3,7 +3,7 @@ import { LineBasicMaterial, BufferGeometry, Vector3, Line } from 'three';
 
 class Rect extends Shape {
     fullLine: Line;
-    constructor({ color = 0x00ff00, animation = function() {} }: IRect) {
+    constructor({ color = 0x00ff00, animation = () => {} }: IRect) {
         super({
             geometry: new BufferGeometry().setFromPoints([
                 new Vector3(-10, 0, 0),

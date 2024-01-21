@@ -1,6 +1,6 @@
-import { renderer } from '../3D/renderer.ts';
-import { scene } from '../3D/scene.ts';
-import { camera } from '../3D/camera.ts';
+import { renderer } from '@/lib/3D/renderer';
+import { scene } from '@/lib/3D/scene';
+import { camera } from '@/lib/3D/camera';
 
 interface Animatable {
     animate(deltaTime: number): void;
@@ -23,20 +23,8 @@ class AnimationLoop {
     }
 }
 
-const animations = {
-    still: function() {
-    },
-    rotate: function(xIncrement: number, yIncrement: number) {
-        return function() {
-            this.rotation.x += xIncrement;
-            this.rotation.y += yIncrement;
-        }
-    }
-}
-
 const loop = new AnimationLoop();
 
 export {
-    animations,
     loop
 }

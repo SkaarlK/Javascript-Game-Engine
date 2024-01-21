@@ -1,10 +1,11 @@
+import { loop } from '@/lib/utils';
 import { BoxGeometry, MeshBasicMaterial, LineBasicMaterial, Mesh, Object3D, BufferGeometry, Line } from 'three';
-import { loop } from "../../utils";
+
 class Shape extends Object3D {
     geometry: RegularShapeGeometry;
     material: RegularShapeMaterial;
     mesh: RegularShapeMesh;
-    animation: Function = function() {};
+    animation: Function = () => {};
 
     constructor({ geometry, material, animation }: IRegularShape) {
         super();
@@ -13,8 +14,9 @@ class Shape extends Object3D {
         this.mesh = new Mesh(geometry, material);
         this.add(this.mesh);
 
-        if (animation)
+        if (animation) {
             this.animation = animation;
+        }
 
         loop.addEntity(this);
     };
@@ -29,7 +31,7 @@ type RegularShapeMesh = Mesh | Line;
 interface IRegularShape {
     geometry: BufferGeometry,
     material: MeshBasicMaterial | LineBasicMaterial
-    animation: Function;
+    animation?: Function;
 }
 
 export default Shape;

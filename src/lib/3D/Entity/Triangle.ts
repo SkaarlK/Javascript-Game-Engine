@@ -1,8 +1,9 @@
-import Shape from './Shape.ts';
-import { Shape as ThreeShape, ShapeGeometry, MeshBasicMaterial } from 'three';
+import Shape from './Shape';
+import { ShapeGeometry, MeshBasicMaterial } from 'three';
+import { Shape as ThreeShape } from 'three/src/extras/core/Shape.js';
 
 class Triangle extends Shape {
-    constructor({ a = [0, 0], b = [1, 0], c = [0, 1], color = 0x00ff00, animation = function() {} }: ITriangle) {
+    constructor({ a = [0, 0], b = [1, 0], c = [0, 1], color = 0x00ff00, animation = () => {} }: ITriangle) {
         const shape = new ThreeShape();
         shape.moveTo(...a);
         shape.lineTo(...b);
