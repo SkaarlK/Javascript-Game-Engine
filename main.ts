@@ -1,14 +1,16 @@
 import { scene, camera, renderer, screen, loop, animations } from './lib/3D/utils.ts';
-import { Polygon, Cube } from './lib/components.ts'
+import { Polygon, Cube, Rect, Triangle } from './lib/components.ts'
 
 screen.start(scene, camera, renderer);
 
-const cube = new Cube({
-    animation: animations.rotate(0.02, 0.02),
+const element = new Cube({
+    width: 100,
+    animation: animations.rotate(0.01, 0.02),
 });
 
-scene.add(cube);
+scene.add(element);
 
-camera.position.z = 10;
+camera.position.set( 0, 0, 50 );
+camera.lookAt( 0, 0, 0 );
 
 loop.animate(0);

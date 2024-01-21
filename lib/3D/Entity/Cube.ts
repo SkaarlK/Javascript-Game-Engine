@@ -1,5 +1,4 @@
 import Shape from './Shape.ts';
-import { doNothing } from '../3D/utils.ts';
 import { BoxGeometry, MeshBasicMaterial, Mesh } from 'three';
 
 class Cube extends Shape {

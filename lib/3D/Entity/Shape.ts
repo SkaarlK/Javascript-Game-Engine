@@ -1,5 +1,5 @@
 import { BoxGeometry, MeshBasicMaterial, LineBasicMaterial, Mesh, Object3D, BufferGeometry, Line } from 'three';
-import { loop } from "../3D/utils";
+import { loop } from "../utils";
 class Shape extends Object3D {
     geometry: RegularShapeGeometry;
     material: RegularShapeMaterial;
