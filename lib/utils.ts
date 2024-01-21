@@ -2,6 +2,7 @@ import { animations, loop } from "./3D/animation.ts";
 import { camera } from "./3D/camera.ts";
 import { scene } from "./3D/scene.ts";
 import { renderer } from "./3D/renderer.ts";
+
 import Cube from './3D/Entity/Cube.ts';
 import Polygon from './3D/Entity/Polygon.ts';
 import Triangle from './3D/Entity/Triangle.ts';
