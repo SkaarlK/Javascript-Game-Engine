@@ -35,9 +35,9 @@ document.addEventListener('mousemove', function(e) {
 
 window.addEventListener('wheel', function(e) {
     if (e.deltaY > 0) {
-        camera.position.y += 2;
+        camera.position.z += 2;
     } else {
-        camera.position.y -= 2;
+        camera.position.z -= 2;
     }
 });
 
