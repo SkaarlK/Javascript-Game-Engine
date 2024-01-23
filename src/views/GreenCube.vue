@@ -9,6 +9,7 @@ const element = new Cube({
 });
 
 scene.add(element);
+
 camera.position.set( 0, 0, 25 );
 camera.lookAt( 0, 0, 0 );
 loop.animate(0);
