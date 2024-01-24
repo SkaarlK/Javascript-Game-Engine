@@ -2,7 +2,7 @@ import Shape from './Shape';
 import { CircleGeometry, MeshBasicMaterial } from 'three';
 
 class Polygon extends Shape {
-    constructor({ radius = 1, segments = 3, color = 0x00ff00, animation = () => {} }: IPolygon) {
+    constructor({ radius = 1, segments = 1, color = 0x00ff00, animation = () => {} }: IPolygon) {
         super({
             geometry: new CircleGeometry(radius, segments),
             material: new MeshBasicMaterial({ color }),
