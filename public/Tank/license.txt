@@ -1,0 +1,8 @@
+Model Information:
+* title:	Altay tank I made for the RTS strategy game
+* source:	https://sketchfab.com/3d-models/altay-tank-i-made-for-the-rts-strategy-game-08dbbcfb041f4ae8a37dfc21017ec786
+* author:	Aparatus (https://sketchfab.com/aparatus)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

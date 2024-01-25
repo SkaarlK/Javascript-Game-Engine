@@ -1,13 +1,7 @@
 <script lang="ts" setup>
-import { animations, scene, camera, renderer, screen, loop, Sphere } from '@/lib/utils';
+import { scene, camera, renderer, screen, loop, Cube } from '@/lib/utils';
 
 screen.start(scene, camera, renderer);
-
-const element = new Sphere({
-    animation: animations.rotate(0.01, 0.01),
-});
-
-scene.add(element);
 
 const speed = 1;
 document.addEventListener('mousemove', function(e) {
@@ -43,6 +37,8 @@ window.addEventListener('wheel', function(e) {
 camera.position.set( 0, 0, 25 );
 camera.lookAt( 0, 0, 0 );
 loop.animate(0);
+
+scene.add(new Cube({}));
 </script>
 
 <template>
