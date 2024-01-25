@@ -16,8 +16,11 @@ class AnimationLoop {
     addEntity(entity: Animatable) {
         this.entities.push(entity);
     }
-    setControls(controls?: OrbitControls) {
-        this.controls = controls;
+    setControls(type: string) {
+        switch (type) {
+            case "orbit":
+            default: this.controls = new OrbitControls(camera, renderer.domElement); break;
+        }
     }
 
     animate(time: number = 0) {

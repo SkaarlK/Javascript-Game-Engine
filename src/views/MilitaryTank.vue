@@ -1,10 +1,11 @@
 <script lang="ts" setup>
 import { scene, camera, renderer, screen, loop, loader } from '@/lib/utils';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-
-const controls = new OrbitControls(camera, renderer.domElement);
 
 screen.start(scene, camera, renderer);
+
+renderer.setClearColor(0xffffff)
+
+loop.setControls('orbit');
 
 loader.load(
     "Tank/scene.gltf",
@@ -15,10 +16,8 @@ loader.load(
 
 camera.position.set( 0, 0, 25 );
 camera.lookAt( 0, 0, 0 );
-loop.setControls(controls);
-loop.animate(0);
 
-renderer.setClearColor(0xffffff)
+loop.animate(0);
 </script>
 
 <template>
