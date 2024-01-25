@@ -15,6 +15,7 @@ loader.load(
 
 camera.position.set( 0, 0, 25 );
 camera.lookAt( 0, 0, 0 );
+loop.setControls(controls);
 loop.animate(0);
 
 renderer.setClearColor(0xffffff)
