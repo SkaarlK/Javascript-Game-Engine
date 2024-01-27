@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/TestField.vue'
+import Home from '../views/MouseFollow.vue'
 import MilitaryTank from '@/views/MilitaryTank.vue'
 
 const router = createRouter({
