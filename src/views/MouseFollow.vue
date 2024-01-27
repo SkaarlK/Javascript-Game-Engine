@@ -88,8 +88,8 @@ loop.animate(0);
 
 if (loop?.controls) {
     loop.controls.enableDamping = true;
-    loop.controls.dampingFactor = 0.05;
-    loop.controls.screenSpacePanning = false;
+    loop.controls.dampingFactor = 0.5;
+    loop.controls.screenSpacePanning = true;
     loop.controls.minDistance = 100;
     loop.controls.maxDistance = 500;
     loop.controls.maxPolarAngle = Math.PI / 2;
