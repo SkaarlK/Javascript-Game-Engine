@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/MouseFollow.vue'
+import MouseFollow from '../views/MouseFollow.vue'
 import MilitaryTank from '@/views/MilitaryTank.vue'
 import EdgeScrolling from '@/views/EdgeScrolling.vue'
 
@@ -9,7 +9,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: EdgeScrolling
     },
     {
       path: '/tank',
@@ -17,9 +17,9 @@ const router = createRouter({
       component: MilitaryTank
     },
     {
-      path: '/edge',
-      name: 'edge',
-      component: EdgeScrolling
+      path: '/mouse-follow',
+      name: 'mouse-follow',
+      component: MouseFollow
     }
   ]
 })
