@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { animations, scene, camera, renderer, screen, loop, Cube } from '@/lib/utils';
 
-screen.start(scene, camera, renderer);
+screen.createScreen(scene, camera, renderer);
 
 const element = new Cube({
     width: 1,

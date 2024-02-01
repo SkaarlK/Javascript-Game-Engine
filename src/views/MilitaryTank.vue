@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { scene, camera, renderer, screen, loop, loader } from '@/lib/utils';
 
-screen.start(scene, camera, renderer);
+screen.createScreen(scene, camera, renderer);
 
 renderer.setClearColor(0xffffff)
 
